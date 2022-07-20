@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import spinner from '../public/spinner.gif'
+import spinner from '../public/spinner1.gif'
 
 
 const Spinner = () => {

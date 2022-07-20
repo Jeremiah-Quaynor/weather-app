@@ -13,14 +13,13 @@ const Weather = () => {
     const [city, setCity ] = useState('')
     const [weather, setWeather ] = useState({})
 
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${NEXT_PUBLIC_WEATHER_KEY}&units=imperial`
 
     const getData = (e) => {
         e.preventDefault()
         setLoading(true)
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${NEXT_PUBLIC_WEATHER_KEY}&units=imperial`
         axios.get(url).then((res)=>{
             setWeather(res.data)
-            // console.log(res.data)
         }).catch((err)=> console.log(err))
         setCity('')
         setLoading(false)
